@@ -156,3 +156,34 @@ public class Main {
     }
 }
 ```
+
+# 타입 변환 (Type Casting)
+자바에서 타입 변환은 `자동 변환`과 `강제 변환`으로 나뉩니다.
+
+1. 자동 타입 변환 (Implicit Casting):
+- `작은 타입` -> `큰 타입`으로 변환할 때 자동으로 이루어집니다.
+- 데이터 손실이 없기 때문에 안전합니다.
+- 예: `int` -> `long`, `int` -> `double`
+2. 강제 타입 변환 (Explicit Casting)
+- `큰 타입` -> `작은 타입`으로 변환할 때 명시적으로 변환해야 합니다.
+- 데이터 손실을 발생할 수 있습니다.
+- 캐스팅 연산자 `()`를 사용합니다
+- 예: `long` -> `int`, `double` -> `int`
+
+# 코드 예시:
+```
+int intValue = 44032;
+// int → char 강제 변환, 유니코드 '가' 출력
+char charValue = (char) intValue;
+System.out.println(charValue);  // 출력: '가'
+
+long longValue = 500;
+// int → long 자동 변환, long → int 강제 변환
+intValue = (int) longValue;
+System.out.println(intValue);  // 출력: 500
+
+double doubleValue = 3.14;
+// double → int 강제 변환 (소수점 버려짐)
+intValue = (int) doubleValue;
+System.out.println(intValue);  // 출력: 3
+```
